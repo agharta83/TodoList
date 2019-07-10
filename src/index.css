@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/*
+ * Charte :
+ * Fond = `#2e5849`
+ * Fond Input = `#1c382f`
+ * Bordure Input = `#183129`
+ * Ombre interne Input = `25px` `rgba(0,0,0,.1)`
+ * Ombre interne Input Focus = `25px` `rgba(0,0,0,.5)`
+ * Texte Input = `#fff`
+ * Placeholder Input = `rgba(255, 255, 255, .5)`
+ * Fond Tâche = `#eee`
+ * Bordure tâche = `#ccc`
+*/
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .App{
+    background: #2e5849;
+    margin: 2em auto;
+    width: 500px;
+    max-width: 700px;
+    color: #eee;
+  }
+
+  .navbar{
+    padding: 10px 20px;
+    text-align: center;
+    background: #1c382f;
+  }
+
+  .navbar h1{
+    margin: 10px 0;
+  }
+
+  .task-list {
+    margin: 0 1em;
+  }
+
+  .task-list ul {
+    padding: 10px 0;
+  }
+
+  .task-list li {
+    list-style-type: none;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+    padding: 1em;
+    margin: 0.5em 0;
+    color: #2e5849;
+    font-size: 1.2em;
+  }
+
+  .task-list li:hover {
+    opacity: 0.7;
+  }
+
+  .task-list .label {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.2em;
+  }
+
+  .task-trash {
+    float: right;
+    margin-left: 0.5em;
+  }
+
+  .task-trash:hover {
+    fill: red;
+  }
+
+  .empty {
+    margin: 20px;
+    text-align: center;
+  }
