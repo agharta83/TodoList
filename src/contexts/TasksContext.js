@@ -5,13 +5,13 @@ export const TaskContext = createContext();
 
 const TaskContextProvider = (props) => {
     const [tasks, setTasks] = useState([
-        { id: 5, label: 'farine', done: true, fav: false },
-        { id: 12, label: 'lait', done: false, fav: false },
-        { id: 4, label: 'sucre', done: false, fav: true },
+        { id: 5, label: 'farine' },
+        { id: 12, label: 'lait' },
+        { id: 4, label: 'sucre' },
     ]);
 
-    const addTask = (id, label, done, fav) => {
-        setTasks([...tasks, { id: uuid(), label, done, fav }]);
+    const addTask = (label) => {
+        setTasks([...tasks, { id: uuid(), label}]);
     };
 
     const removeTask = (id) => {
