@@ -1,25 +1,13 @@
-import React, { createContext, useState } from 'react';
-import uuid from 'uuid/v1';
+import React, { createContext, useReducer } from 'react';
+import { taskReducer } from '../reducers/taskReducer';
 
 export const TaskContext = createContext();
 
 const TaskContextProvider = (props) => {
-    const [tasks, setTasks] = useState([
-        { id: 5, label: 'farine' },
-        { id: 12, label: 'lait' },
-        { id: 4, label: 'sucre' },
-    ]);
-
-    const addTask = (label) => {
-        setTasks([...tasks, { id: uuid(), label}]);
-    };
-
-    const removeTask = (id) => {
-        setTasks(tasks.filter(task => task.id !== id));
-    }
+    const [tasks, dispatch] = useReducer(taskReducer, []);
 
     return (
-        <TaskContext.Provider value={{ tasks, addTask, removeTask}}>
+        <TaskContext.Provider value={{ tasks, dispatch }}>
             {props.children}
         </TaskContext.Provider>
     );

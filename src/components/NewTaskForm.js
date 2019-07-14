@@ -2,13 +2,12 @@ import React, { useContext, useState } from 'react';
 import { TaskContext } from '../contexts/TasksContext';
 
 const NewTaskForm = () => {
-    const { addTask } = useContext(TaskContext);
+    const { dispatch } = useContext(TaskContext);
     const [ label, setLabel ] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        //console.log(e.target.value);
-        addTask(label);
+        dispatch({ type: 'ADD_TASK', task:{label} });
         setLabel('');
     }
 
