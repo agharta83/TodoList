@@ -16,7 +16,7 @@ const TaskDetails = ({ task }) => {
             <input type="checkbox" checked={task.done} onChange={ () => dispatch({ type: 'CHECK_TASK', id: task.id })} />
             <span className="task-label">{task.label}</span>
             <FaTrash className="task-trash" onClick={ () => dispatch({ type: 'REMOVE_TASK', id: task.id })} />
-            <FaStar className="task-star" />
+            <FaStar className="task-star" onClick={ () => dispatch({ type: 'FAVORITE_TASK', id: task.id })} />
         </li>
     );
 }

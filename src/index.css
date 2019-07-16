@@ -80,6 +80,9 @@ body {
 
 .task-star {
   float: right;
+}
+
+.task-fav .task-star {
   fill: gold;
 }
 

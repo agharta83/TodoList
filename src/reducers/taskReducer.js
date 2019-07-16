@@ -24,6 +24,17 @@ export const taskReducer = (state, action) => {
                 return task;
             });
 
+        case 'FAVORITE_TASK':
+            return state.map((task) => {
+                if (task.id === action.id) {
+                    return {
+                        ...task,
+                        fav: !task.fav,
+                    };
+                }
+                return task;
+            });
+
         default:
             return state;
     }
