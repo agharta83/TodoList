@@ -5,7 +5,7 @@ import TaskDetails from './TaskDetails';
 const TaskList = () => {
     const { tasks } = useContext(TaskContext);
 
-    return tasks.length ? (
+    return (
         <div className="task-list">
             <ul>
                 {tasks.map(task => {
@@ -13,8 +13,6 @@ const TaskList = () => {
                 })}
             </ul>
         </div>
-    ) : (
-        <div className="empty">No tasks to do. Hello free time !</div>
     );
 }
 
