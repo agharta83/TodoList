@@ -7,7 +7,9 @@ const TaskContextProvider = (props) => {
     const [tasks, dispatch] = useReducer(taskReducer, [], () => {
         const localData = localStorage.getItem('tasks');
 
-        return localData ? JSON.parse(localData) : [];
+        const datas = localData ? JSON.parse(localData) : [];
+
+        return datas;
     });
 
     useEffect( () => {
